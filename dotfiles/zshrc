@@ -1,0 +1,27 @@
+export ZSH="$HOME/.oh-my-zsh"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="skaro"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# Personal Aliases
+alias cat="bat"
+alias catt="/bin/cat"
+alias dl="cd ~/Downloads"
+alias doc="cd ~/Documents"
+alias hack="cd ~/HACK"
+alias masluz="brightnessctl set +2%"
+alias menosluz="brightnessctl set 2%-"
+# Termbin for http://termbin.com/
+alias termbin="nc termbin.com 9999"
+#
+#vim mode
+set -o vi
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+/bin/cat ~/.todo.md
+alias todo='vim ~/.todo.md'
+
+# Open kitty in last path
+chpwd() {
+      echo $PWD > ~/.last_dir
+}

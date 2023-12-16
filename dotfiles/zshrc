@@ -16,6 +16,7 @@ alias doc="cd ~/Documents"
 alias hack="cd ~/HACK"
 alias masluz="brightnessctl set +2%"
 alias menosluz="brightnessctl set 2%-"
+alias wow="deepin-wine5-stable ~/Documents/Games/wow/Wow.exe"
 # Termbin for http://termbin.com/
 alias termbin="nc termbin.com 9999"
 #

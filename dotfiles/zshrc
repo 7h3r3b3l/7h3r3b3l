@@ -6,7 +6,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Path
-export PATH="/bin:/usr/bin:/home/r3b3l/go/bin/"
+export PATH="/bin:/usr/bin:/home/r3b3l/go/bin/:/home/r3b3l/.cargo/bin/"
 
 # Personal Aliases
 alias cat="bat"

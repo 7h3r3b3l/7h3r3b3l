@@ -426,6 +426,7 @@ assign [title="clementine"] $ws11
 assign [title="Clementine"] $ws11
 assign [title="Lollypop"] $ws11
 assign [title="lollypop"] $ws11
+assign [title="pavucontrol"] $ws11
 # Read
 assign [class="okular"] $ws12
 assign [class="mupdf"] $ws12

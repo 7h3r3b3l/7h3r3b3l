@@ -58,6 +58,7 @@ alias radio_psychedelic_rock="mplayer -cache 10000 -cache-min 0 'https://fr1-pla
 alias radio_jamaica="mplayer -cache 10000 -cache-min 0 'https://stream-145.zeno.fm/2vaypn80g3quv?zs=_SW2CEgYSLq1CXR-hF46uw'"
 alias radio_lyon_underground="mplayer -cache 10000 -cache-min 0 'https://icecast.lyl.live/live'"
 alias radio_pirate="mplayer -cache 10000 -cache-min 0 'https://korna-rocks.stream.laut.fm/korna-rocks'"
+alias radio_nerdcore="mplayer -cache 10000 -cache-min 0 'https://stream.zeno.fm/lgvnv327nbfvv'"
 
 #vim mode
 set -o vi

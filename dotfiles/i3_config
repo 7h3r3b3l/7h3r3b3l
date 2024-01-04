@@ -428,9 +428,9 @@ assign [title="Lollypop"] $ws11
 assign [title="lollypop"] $ws11
 assign [title="pavucontrol"] $ws11
 # Read
-assign [class="okular"] $ws12
-assign [class="mupdf"] $ws12
-assign [class="calibre"] $ws12
+#assign [class="okular"] $ws12
+#assign [class="mupdf"] $ws12
+#assign [class="calibre"] $ws12
 
 # Fibonacci mode
 # https://github.com/olemartinorg/i3-alternating-layout

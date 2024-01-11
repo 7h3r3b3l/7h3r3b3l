@@ -16,7 +16,7 @@ alias doc="cd ~/Documents"
 alias hack="cd ~/HACK"
 alias masluz="brightnessctl set +2%"
 alias menosluz="brightnessctl set 2%-"
-alias wow="deepin-wine5-stable ~/Documents/Games/wow/Wow.exe"
+alias wow="wine64 ~/Documents/wow/Wow.exe"
 alias screen="bash ~/Documents/7h3r3b3l/scripts/screen.sh"
 alias single="bash ~/Documents/7h3r3b3l/scripts/single.sh"
 # Termbin for http://termbin.com/

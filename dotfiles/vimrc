@@ -32,6 +32,7 @@ set noerrorbells
 set modifiable
 set nolist
 
+" No completion of this kind of stuff for now
 inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O

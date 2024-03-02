@@ -1,5 +1,5 @@
 {
-	"layer": "top",
+	"layer": "bottom",
 	"position": "bottom",
 	"modules-left": ["hyprland/workspaces","custom/launcher","cpu","memory","custom/media","tray"],
 	"modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery","custom/power"],

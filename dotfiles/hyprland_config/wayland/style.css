@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-	background: transparent;
+	background: black;
 }
 
 window#waybar.hidden {
@@ -43,13 +43,13 @@ window#waybar.hidden {
 
 #tags button.occupied {
 	transition: none;
-	color: #F28FAD;
+	color: white;
 	background: transparent;
 	font-size: 4px;
 }
 
 #tags button.focused {
-	color: #ABE9B3;
+	color: white;
     border-top: 2px solid #ABE9B3;
     border-bottom: 2px solid #ABE9B3;
 }
@@ -75,8 +75,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #bd93f9;
+	color: white;
+	background: black;
 }
 
 #pulseaudio {
@@ -87,8 +87,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #1A1826;
-	background: #FAE3B0;
+	color: white;
+	background: black;
 }
 
 #battery {
@@ -99,13 +99,13 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #B5E8E0;
+	color: white;
+	background: black;
 }
 
 #battery.charging, #battery.plugged {
-	color: #161320;
-    background-color: #B5E8E0;
+	color: white;
+    background-color: black;
 }
 
 #battery.critical:not(.charging) {
@@ -144,8 +144,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #ABE9B3;
+	color: white;
+	background: #000000;
 	/*background: #1A1826;*/
 }
 
@@ -157,8 +157,8 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #DDB6F2;
+	color: blue;
+	background: #000000;
 }
 #cpu {
 	margin-top: 6px;
@@ -168,8 +168,8 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #96CDFB;
+	color: blue;
+	background: #000000;
 }
 
 #tray {

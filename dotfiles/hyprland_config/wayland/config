@@ -3,8 +3,8 @@
 	"position": "bottom",
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/ip_icon", "wireplumber", "cpu", "memory", "battery", "clock"],
+    "modules-center": ["custom/ip_icon"],
+    "modules-right": [ "wireplumber", "cpu", "memory", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {

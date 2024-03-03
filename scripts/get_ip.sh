@@ -1,2 +1,2 @@
 #!/bin/bash
-curl ip.me
+curl ipinfo.io | jq -r '[.city, .ip] | @csv'  | tr -d '"' | tr ",", ":"

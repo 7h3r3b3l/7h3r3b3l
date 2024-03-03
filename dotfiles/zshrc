@@ -22,7 +22,7 @@ alias screen="bash ~/Documents/7h3r3b3l/scripts/screen.sh"
 alias single="bash ~/Documents/7h3r3b3l/scripts/single.sh"
 # Termbin for http://termbin.com/
 alias termbin="nc termbin.com 9999"
-alias protonvpn="sudo openvpn --config ~/Documents/nl_proton.ovpn --auth-user-pass ~/.protonvpn.txt"
+#alias protonvpn="sudo openvpn --config ~/Documents/nl_proton.ovpn --auth-user-pass ~/.protonvpn.txt"
 alias change_wallpaper="bash ~/Documents/7h3r3b3l/scripts/change_wallpaper.sh; echo wallpaper changed for the next reboot"
 
 # Local Playlists

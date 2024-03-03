@@ -77,18 +77,18 @@
         "scroll-step": 1,
         "format": "<span color='white'>{volume}%</span> {icon}",
         "format-bluetooth": "<span color='white'>{volume}%</span> {icon} ",
-        "format-bluetooth-muted": "{icon} ",
-        "format-muted": "",
+        "format-bluetooth-muted": "{icon} ",
+        "format-muted": "muted",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "-", ""]
         },
         "on-click-right": "pavucontrol",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",

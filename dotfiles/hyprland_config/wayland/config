@@ -115,7 +115,6 @@
     },
 	"custom/ip_icon": {
 		"format": "{}  ",
-		"interval": 10,
 		"exec": "/home/r3b3l/Documents/7h3r3b3l/scripts/get_ip.sh"
 	},
     "custom/logout": {

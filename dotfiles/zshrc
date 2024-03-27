@@ -80,3 +80,6 @@ alias todo='vim ~/.todo.md'
 chpwd() {
       echo $PWD > ~/.last_dir
 }
+
+alias todo="vim ~/.todo.md"
+cat ~/.todo.md -pp

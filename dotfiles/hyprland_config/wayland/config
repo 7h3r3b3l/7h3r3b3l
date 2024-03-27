@@ -4,7 +4,7 @@
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/ip_icon"],
-    "modules-right": [ "wireplumber", "cpu", "memory", "battery", "clock"],
+    "modules-right": ["wireplumber","cpu", "memory", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -68,8 +68,8 @@
 //        // "on-click": "nm-connection-editor"
 //    },
     "network": {
-        "interval": 2,
-        "format": "<span color='white'>{bandwidthDownBytes:>}</span><span font='FontAwesome6Pro'> ↓</span><span color='white'> {bandwidthUpBytes:>}</span><span font='FontAwesome6Pro'> ↑</span>",
+        "interval": 1,
+        "format": "<span color='white'>{bandwidthDownBytes:>}</span><span font='FontAwesome6Pro'> ↓</span><span color='white'> {bandwidthUpBytes:>}</span><span font='FontAwesome6Pro'> ↑    |</span>",
         "format-disconnected": "Disconnected <span font='FontAwesome6Pro'>⚠</span>",
         "tooltip-format": "{essid}: {ipaddr}/{cidr}"
     },
@@ -115,7 +115,8 @@
     },
 	"custom/ip_icon": {
 		"format": "{}  ",
-		"exec": "/home/r3b3l/Documents/7h3r3b3l/scripts/get_ip.sh"
+		"exec": "/home/r3b3l/Documents/7h3r3b3l/scripts/get_ip.sh",
+		"interval":600
 	},
     "custom/logout": {
         "format": "<span font='FontAwesome6Pro'>⏻</span>",

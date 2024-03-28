@@ -69,7 +69,7 @@ alias radio_nerdcore="mpv -cache 10000 -cache-min 0 'https://stream.zeno.fm/lgvn
 alias videos='mpvpaper "*" ~/Documents/videos -o "no-audio --loop-playlist shuffle"'
 # GAU to fix zsh problem
 alias gau="~/go/bin/gau"
-alias pwn="iwctl station wlan0 scan; sleep 1;  iwctl station wlan0 connect pwn; iwctl station wlan0 get-networks"
+alias pwn="iwctl station wlan0 scan; sleep 1;  iwctl station wlan0 connect pwn; iwctl station wlan0 get-networks; curl ipinfo.io"
 
 #vim mode
 set -o vi

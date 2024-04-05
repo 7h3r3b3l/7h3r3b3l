@@ -82,9 +82,14 @@ require("toggleterm").setup{}
 
 --  Init terminal with <SPACE>T 
 vim.api.nvim_set_keymap('n', '<leader>t', ':FloatermNew<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>g', ':FloatermNew cargo run<CR>', { noremap = true, silent = true })
+
 
 -- Init Neotree with <SPACE>N
 vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree<CR>', { noremap = true, silent = true })
+
+-- Open Lazygit
+vim.api.nvim_set_keymap('n', '<leader>g', ':FloatermNew lazygit<CR>', { noremap = true, silent = true })
 
 
 
@@ -92,7 +97,7 @@ vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree<CR>', { noremap = true, sile
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "python" },
   callback = function()
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":!python %<CR>", { noremap = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":FloatermNew python % ;echo '[+] process finished with no errors'; sleep 1000000 <CR><CR>", { noremap = true })
   end,
 })
 
@@ -100,6 +105,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "rust" },
   callback = function()
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":!cargo run<CR>", { noremap = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":FloatermNew cargo run; echo '[+] process finished with no errors'; sleep 1000000<CR><CR>", { noremap = true })
   end,
 })

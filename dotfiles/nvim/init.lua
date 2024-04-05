@@ -1,4 +1,4 @@
-vim.g.maploader = ' '
+vim.g.mapleader = ' '  -- Set leader key to space
 vim.g.maplocalleader = ' ' 
 
 vim.opt.backspace = "2"
@@ -33,9 +33,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins= {
+    -- PLUGINS HERE
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+{'akinsho/toggleterm.nvim', version = "*", config = true},
+
 }
 local opts = {}
+
+
+--  CONFIGURATION OF THE THEME
 require("lazy").setup(plugins, opts)
 require("catppuccin").setup {
         color_overrides = {
@@ -50,9 +56,33 @@ require("catppuccin").setup {
         mocha = {
             base = "#000000",
         },
-        frappe = {},
-        macchiato = {},
+        frappe = {
+            base = "#000000",
+        },
+        macchiato = {
+            base = "#000000",
+        },
+    transparent_background = true,
     }
 }
---vim.cmd.colorscheme "catppuccin-mocha"
-vim.cmd.colorscheme "catppuccin-mocha"
+-- ELECTION OF THE THEME, CAN BE FRAPPE, MOCHA, LATE OR MACCHIATO
+vim.cmd.colorscheme "catppuccin-frappe"
+
+-- Configuration of ToggleTerm
+
+require("toggleterm").setup{}
+
+--  Init terminal with <SPACE>T 
+vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true })
+
+
+
+
+-- Execute Python File
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "python" },
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":!python %<CR>", { noremap = true })
+  end,
+})

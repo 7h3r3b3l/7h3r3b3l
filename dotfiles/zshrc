@@ -10,6 +10,7 @@ export PATH="/bin:/usr/bin:/home/r3b3l/go/bin/:/home/r3b3l/.cargo/bin/:/home/r3b
 
 # Personal Aliases
 alias nv="nvim"
+alias vim="nvim" # Change forever hahaha!
 alias cat="bat"
 alias catt="/bin/cat"
 alias dl="cd ~/Downloads"

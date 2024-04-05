@@ -11,7 +11,7 @@ window#waybar {
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+	opacity: 0.0;
 }
 
 #window {
@@ -192,7 +192,7 @@ window#waybar.hidden {
 	padding-right: 5px;
 	border-radius: 10px;
 	transition: none;
-    color: #89DCEB;
+    color: white;
     background: #161320;
 }
 
@@ -244,6 +244,10 @@ window#waybar.hidden {
 	transition: none;
 	color: #161320;
 	background: #F2CDCD;
+}
+
+#custom-ip_icon {
+	color:white;
 }
 
 

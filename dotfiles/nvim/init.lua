@@ -6,7 +6,6 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.swapfile = false
 
-
 -- Set tab spaces to 4
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -99,7 +98,10 @@ local plugins= {
 	})
     end
 },
--- NEXT PLUGIN HERE
+    -- Black for nvim
+{'averms/black-nvim'},
+    -- Table mode
+{'dhruvasagar/vim-table-mode'}
 }
 
 local opts = {}

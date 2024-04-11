@@ -44,59 +44,82 @@ local plugins= {
 {'windwp/nvim-autopairs',event = "InsertEnter",config = true,},
     -- Floating Terminal
 {'voldikss/vim-floaterm'},
+    -- Python LSP (Language Server Protocol)
+{ "neovim/nvim-lspconfig",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
+  },
+  config = function()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+    require('mason').setup()
+    local mason_lspconfig = require 'mason-lspconfig'
+    mason_lspconfig.setup {
+        ensure_installed = { "pyright" }
+    }
+    require("lspconfig").pyright.setup {
+        capabilities = capabilities,
+    }
+  end
+},
     -- Autocompletion
-{
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-nvim-lua",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"saadparwaiz1/cmp_luasnip",
-		"L3MON4D3/LuaSnip",
-	},
-    config = function()
-	local cmp = require("cmp")
-	vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
-	cmp.setup({
-		snippet = {
-			expand = function(args)
-				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-			end,
-		},
-		window = {
-			-- completion = cmp.config.window.bordered(),
-			-- documentation = cmp.config.window.bordered(),
-		},
-		mapping = cmp.mapping.preset.insert({
-			["<C-b>"] = cmp.mapping.scroll_docs(-4),
-			["<C-f>"] = cmp.mapping.scroll_docs(4),
-			["<C-Space>"] = cmp.mapping.complete(),
-			["<C-e>"] = cmp.mapping.abort(),
-			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		}),
-		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "nvim_lua" },
-			{ name = "luasnip" }, -- For luasnip users.
-			-- { name = "orgmode" },
-		}, {
-			{ name = "buffer" },
-			{ name = "path" },
-		}),
-	})
-
-	cmp.setup.cmdline(":", {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = cmp.config.sources({
-			{ name = "path" },
-		}, {
-			{ name = "cmdline" },
-		}),
-	})
+{ "hrsh7th/nvim-cmp",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip"
+  },
+  config = function()
+    local has_words_before = function()
+      unpack = unpack or table.unpack
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
+
+    local cmp = require('cmp')
+    local luasnip = require('luasnip')
+
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end
+      },
+      completion = {
+        autocomplete = false
+      },
+      mapping = cmp.mapping.preset.insert ({
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<s-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<c-e>"] = cmp.mapping.abort(),
+        ["<CR>"] = cmp.mapping.confirm({ select=true }),
+      }),
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+      }
+    })
+  end
 },
     -- Black for nvim
 {'averms/black-nvim'},

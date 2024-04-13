@@ -57,7 +57,7 @@ local plugins= {
     require('mason').setup()
     local mason_lspconfig = require 'mason-lspconfig'
     mason_lspconfig.setup {
-        ensure_installed = { "pyright" }
+        ensure_installed = { "pyright", "rust_analyzer" }
     }
     require("lspconfig").pyright.setup {
         capabilities = capabilities,
@@ -124,7 +124,9 @@ local plugins= {
     -- Black for nvim
 {'averms/black-nvim'},
     -- Table mode
-{'dhruvasagar/vim-table-mode'}
+{'dhruvasagar/vim-table-mode'},
+    --  Rust Tools
+{'simrat39/rust-tools.nvim'},
 }
 
 local opts = {}
@@ -189,4 +191,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     vim.api.nvim_buf_set_keymap(0, "n", "<leader><leader>", ":FloatermNew cargo run; echo '[+] process finished with no errors'; sleep 1000000<CR><CR>", { noremap = true })
   end,
+})
+
+
+
+-- Autocomplete rust
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })

@@ -1,8 +1,7 @@
 vim.g.mapleader = ' '  -- Set leader key to space
 vim.g.maplocalleader = ' ' 
 
-vim.opt.backspace = "2"
-vim.opt.showcmd = true
+vim.opt.backspace = "2" vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.swapfile = false
 
@@ -38,8 +37,6 @@ local plugins= {
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- ToggleTerm for terminal
 {'akinsho/toggleterm.nvim', version = "*", config = true},
-    -- Neo Vim Tree (NeoTree)
-{"nvim-neo-tree/neo-tree.nvim", branch = "v3.x", dependencies = {"nvim-lua/plenary.nvim","nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim",}},
     -- Auto Complete quotes
 {'windwp/nvim-autopairs',event = "InsertEnter",config = true,},
     -- Floating Terminal
@@ -127,10 +124,38 @@ local plugins= {
 {'dhruvasagar/vim-table-mode'},
     --  Rust Tools
 {'simrat39/rust-tools.nvim'},
+    -- Nerd Tree
+{'preservim/nerdtree'},
+    -- Init Telescope
+{'nvim-telescope/telescope.nvim'},
+{'nvim-lua/plenary.nvim'},
+    -- Nvim Start With Style
+{
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        local startify_theme = require'alpha.themes.startify'
+        startify_theme.section.header.val = {
+            "                                        .                             ",
+            "                               :  -: :- .=     ..                     ",
+            "                            =. == .*  *  *:  +@@@@%*=:                ",
+            "    :=:               .  +. -*  #  #: *- ++ +@@@@@@@@@@*-             ",
+            "    +@@# .. .. .: .=  +: -# .%  %: #= +* -# %@@@#-.  .=@@%+.          ",
+            "     *@@*.#-.#- *= +* -#  %  #. *- += =* -*.%@@@.      =@@@@+         ",
+            "    .%@@+.#: #= +*.=#:=#-=#=-%*-%#:@@:%@-#%-*@@@#:    -@@@@@@%:       ",
+            "    +@@+ .. .:  +. ++ :#.:*::+-.+=.== -= := +@@@@@%##%@@@@@@@@%       ",
+            "    .:            .=  ++ .%  %. #- *= +* =% :@@@@@@@@@@@%#***-        ",
+            "                      -  ++ .%  %. #- *= ++  %@@@@@%%#**##%*.         ",
+            "                         =  =+ .#  #  *. *.  -@@@@@%@@@@@#-           ",
+            "                        =  =- -= := .=    %@@@@@%#=:                  ",
+            "                          .  :  .  .     .:::.                        "
+
+        }
+        require'alpha'.setup(startify_theme.config)
+    end
 }
 
-local opts = {}
-
+}
 
 --  CONFIGURATION OF THE THEME
 require("lazy").setup(plugins, opts)
@@ -169,12 +194,12 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':FloatermNew<CR>', { noremap = true, 
 --vim.api.nvim_set_keymap('n', '<leader>g', ':FloatermNew cargo run<CR>', { noremap = true, silent = true })
 
 
--- Init Neotree with <SPACE>N
-vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree<CR>', { noremap = true, silent = true })
 
 -- Open Lazygit
 vim.api.nvim_set_keymap('n', '<leader>g', ':FloatermNew lazygit<CR>', { noremap = true, silent = true })
 
+-- Open Nerd Tree
+vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTree<CR>', { noremap = true, silent = true })
 
 
 -- Execute Python File
@@ -208,3 +233,10 @@ rt.setup({
     end,
   },
 })
+
+-- Run Telescope Find Files
+vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
+
+
+-- Go To Main
+vim.api.nvim_set_keymap('n', '<leader>a', ':Alpha <CR>', { noremap = true, silent = true })

@@ -89,3 +89,5 @@ chpwd() {
 
 alias todo="vim ~/.todo.md"
 cat -pp ~/.todo.md 
+
+export PATH=$PATH:/home/r3b3l/.spicetify

@@ -17,7 +17,7 @@ alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias masluz="brightnessctl set +2%"
 alias menosluz="brightnessctl set 2%-"
-alias wow="wine64 ~/Documents/wow/Wow.exe"
+alias wow='wine ~/Documents/wow/Wow.exe -opengl'
 alias minecraftplus="java -jar ~/Documents/minecraft/TLauncher-2.895.jar; echo starting server... ; cd ~/Documents/minecraft;  java -jar ~/Documents/minecraft/server.jar nogui"
 alias minecraft="java -jar ~/Documents/minecraft/TLauncher-2.895.jar"
 alias screen="bash ~/Documents/7h3r3b3l/scripts/screen.sh"
@@ -34,6 +34,7 @@ alias cd="z"
 alias hack="mpv -shuffle  ~/Music/Hack/*"
 alias deephack="mpv -shuffle ~/Music/DeepHack/*"
 alias music="mpv -shuffle  ~/Music/Musica_Toda/*"
+alias findme="mpv -shuffle ~/Music/Find_Me/*"
 # Radios
 alias radio_defcon="mpv https://ice2.somafm.com/defcon-128-mp3"
 alias radio_boleros="mpv 'https://stream-159.zeno.fm/5t45zksv7mruv?zs=FpFDWpluQo6NxWwCXZTPNA'"
@@ -75,6 +76,7 @@ alias videos='mpvpaper "*" ~/Documents/videos -o "no-audio --loop-playlist shuff
 # GAU to fix zsh problem
 alias gau="~/go/bin/gau"
 alias pwn="iwctl station wlan0 scan; sleep 1;  iwctl station wlan0 connect pwn; iwctl station wlan0 get-networks; curl ipinfo.io"
+alias lg="lazygit"
 
 #vim mode
 set -o vi

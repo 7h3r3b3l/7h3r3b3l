@@ -136,7 +136,7 @@ local plugins= {
     config = function ()
         local startify_theme = require'alpha.themes.startify'
         startify_theme.section.header.val = {
-            "                       7h3r3b3l                      ",
+            "                          rrr                        ",
             "                         ::::.                       ",
             "                      =%@@@@@@#-                     ",
             "                    =@@@@@@@@@@@*                    ",
@@ -175,6 +175,7 @@ require("lazy").setup(plugins, opts)
 require("catppuccin").setup {
         color_overrides = {
         all = {
+            base = "#00000000",
             text = "#ffffff",
         },
         latte = {
@@ -183,16 +184,14 @@ require("catppuccin").setup {
             crust = "#ffffff",
         },
         mocha = {
-            base = "#000000",
         },
         frappe = {
-            base = "#000000",
+            base = "#00000000",
         },
         macchiato = {
-            base = "#000000",
         },
+    },
     transparent_background = true,
-    }
 }
 
 -- ELECTION OF THE THEME, CAN BE FRAPPE, MOCHA, LATE OR MACCHIATO

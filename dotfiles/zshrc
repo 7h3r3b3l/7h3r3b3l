@@ -6,7 +6,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Path
-export PATH="/bin:/usr/bin:/home/r3b3l/go/bin/:/home/r3b3l/.cargo/bin/:/home/r3b3l/.local/bin"
+export PATH="/bin:/usr/bin:/home/r/go/bin/:/home/r/.cargo/bin/:/home/r/.local/bin"
 
 # Personal Aliases
 alias nv="nvim"
@@ -17,9 +17,9 @@ alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias masluz="brightnessctl set +2%"
 alias menosluz="brightnessctl set 2%-"
-alias wow='wine ~/Documents/wow/Wow.exe -opengl'
-alias minecraftplus="java -jar ~/Documents/minecraft/TLauncher-2.895.jar; echo starting server... ; cd ~/Documents/minecraft;  java -jar ~/Documents/minecraft/server.jar nogui"
-alias minecraft="java -jar ~/Documents/minecraft/TLauncher-2.895.jar"
+alias wow='wine ~/Documents/wow/Wow.exe --cpu '
+alias minecraftplus="java -jar ~/Documents/minecraft/TLauncher.jar; echo starting server... ; cd ~/Documents/minecraft;  java -jar ~/Documents/minecraft/server.jar nogui"
+alias minecraft="java -jar ~/Documents/minecraft/TLauncher.jar"
 alias screen="bash ~/Documents/7h3r3b3l/scripts/screen.sh"
 alias single="bash ~/Documents/7h3r3b3l/scripts/single.sh"
 # Termbin for http://termbin.com/
@@ -92,4 +92,10 @@ chpwd() {
 alias todo="vim ~/.todo.md"
 cat -pp ~/.todo.md 
 
-export PATH=$PATH:/home/r3b3l/.spicetify
+
+tmux a > /dev/null 2>&1 || tmux > /dev/null 2>&1
+
+
+# Generated for pdtm. Do not edit.
+export PATH=$PATH:/home/r/.pdtm/go/bin
+
